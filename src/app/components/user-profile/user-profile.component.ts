@@ -8,12 +8,12 @@ import { Component } from '@angular/core';
 })
 export class UserProfileComponent {
   user = {
-    name: 'Jane Doe',
-    email: 'jane.doe@example.com',
+    name: 'HackerMan_101',
+    email: 'hackxss@example.com',
     role: 'Administrator',
     company: 'Power Team Inc.',
     location: 'San Pablo City, Laguna, Philippines',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.',
+    bio: 'Awiwii~',
     joinDate: new Date(2020, 5, 15),
   };
 }

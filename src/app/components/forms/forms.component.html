@@ -1,134 +1,28 @@
 <div class="forms-container">
     <h1 class="page-title">Forms</h1>
 
-    <div class="forms-content">
-        <mat-card class="form-card">
-            <mat-card-header>
-                <mat-card-title>Employee Information</mat-card-title>
-                <mat-card-subtitle>Enter employee details</mat-card-subtitle>
-            </mat-card-header>
+    <mat-card class="forms-card">
+        <mat-card-header>
+            <mat-card-title>Available Forms</mat-card-title>
+        </mat-card-header>
 
-            <mat-card-content>
-                <form class="employee-form">
-                    <div class="form-row">
-                        <mat-form-field appearance="outline">
-                            <mat-label>First Name</mat-label>
-                            <input matInput placeholder="Enter first name">
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline">
-                            <mat-label>Last Name</mat-label>
-                            <input matInput placeholder="Enter last name">
-                        </mat-form-field>
-                    </div>
-
-                    <div class="form-row">
-                        <mat-form-field appearance="outline">
-                            <mat-label>Email</mat-label>
-                            <input matInput placeholder="Enter email" type="email">
-                            <mat-icon matSuffix>email</mat-icon>
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline">
-                            <mat-label>Phone</mat-label>
-                            <input matInput placeholder="Enter phone number" type="tel">
-                            <mat-icon matSuffix>phone</mat-icon>
-                        </mat-form-field>
-                    </div>
-
-                    <div class="form-row">
-                        <mat-form-field appearance="outline">
-                            <mat-label>Department</mat-label>
-                            <mat-select>
-                                <mat-option *ngFor="let department of departments" [value]="department">
-                                    {{ department }}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline">
-                            <mat-label>Hire Date</mat-label>
-                            <input matInput [matDatepicker]="picker">
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
-                        </mat-form-field>
-                    </div>
-
-                    <mat-form-field appearance="outline" class="full-width">
-                        <mat-label>Address</mat-label>
-                        <textarea matInput rows="3" placeholder="Enter address"></textarea>
-                    </mat-form-field>
-
-                    <div class="form-row checkbox-row">
-                        <mat-checkbox>Full-time Employee</mat-checkbox>
-                        <mat-checkbox>Remote Worker</mat-checkbox>
-                    </div>
-
-                    <div class="form-actions">
-                        <button mat-raised-button color="primary">Submit</button>
-                        <button mat-button>Reset</button>
-                    </div>
-                </form>
-            </mat-card-content>
-        </mat-card>
-
-        <mat-card class="form-card">
-            <mat-card-header>
-                <mat-card-title>Project Information</mat-card-title>
-                <mat-card-subtitle>Enter project details</mat-card-subtitle>
-            </mat-card-header>
-
-            <mat-card-content>
-                <form class="project-form">
-                    <mat-form-field appearance="outline" class="full-width">
-                        <mat-label>Project Name</mat-label>
-                        <input matInput placeholder="Enter project name">
-                    </mat-form-field>
-
-                    <div class="form-row">
-                        <mat-form-field appearance="outline">
-                            <mat-label>Start Date</mat-label>
-                            <input matInput [matDatepicker]="startPicker">
-                            <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
-                            <mat-datepicker #startPicker></mat-datepicker>
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline">
-                            <mat-label>End Date</mat-label>
-                            <input matInput [matDatepicker]="endPicker">
-                            <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
-                            <mat-datepicker #endPicker></mat-datepicker>
-                        </mat-form-field>
-                    </div>
-
-                    <div class="form-row">
-                        <mat-form-field appearance="outline">
-                            <mat-label>Budget</mat-label>
-                            <input matInput type="number" placeholder="Enter budget">
-                            <span matPrefix>$&nbsp;</span>
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline">
-                            <mat-label>Priority</mat-label>
-                            <mat-select>
-                                <mat-option value="low">Low</mat-option>
-                                <mat-option value="medium">Medium</mat-option>
-                                <mat-option value="high">High</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </div>
-
-                    <mat-form-field appearance="outline" class="full-width">
-                        <mat-label>Description</mat-label>
-                        <textarea matInput rows="4" placeholder="Enter project description"></textarea>
-                    </mat-form-field>
-
-                    <div class="form-actions">
-                        <button mat-raised-button color="primary">Submit</button>
-                        <button mat-button>Reset</button>
-                    </div>
-                </form>
-            </mat-card-content>
-        </mat-card>
-    </div>
+        <mat-card-content>
+            <div class="forms-list">
+                <mat-list>
+                    <mat-list-item *ngFor="let form of forms" class="form-item">
+                        <mat-icon matListItemIcon [ngClass]="form.fileType.toLowerCase()">{{ getFileIcon(form.fileType)
+                            }}</mat-icon>
+                        <div matListItemTitle>{{ form.name }}</div>
+                        <div matListItemLine class="form-details">{{ form.fileType }} • {{ form.fileSize }}</div>
+                        <div class="form-actions">
+                            <button mat-raised-button color="primary">
+                                <mat-icon>download</mat-icon>
+                                Download
+                            </button>
+                        </div>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+        </mat-card-content>
+    </mat-card>
 </div>
