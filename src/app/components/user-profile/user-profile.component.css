@@ -24,16 +24,16 @@
     align-items: center;
     padding: 20px;
   }
+
+  .profile-icon {
+    font-size: 300%;
+    width: auto;
+    height: auto;
+    display: inline-block;
+}
   
   .profile-avatar {
     margin-right: 20px;
-  }
-  
-  .profile-avatar img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
   }
   
   .profile-info h2 {

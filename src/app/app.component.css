@@ -4,6 +4,7 @@
   
 .sidenav {
     width: 250px;
+    overflow: hidden;
 }
   
 .toolbar-spacer {
