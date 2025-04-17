@@ -1,0 +1,15 @@
+<mat-card class="stat-card">
+    <div class="stat-icon" [style.background-color]="color">
+        <mat-icon>{{ icon }}</mat-icon>
+    </div>
+    <div class="stat-content">
+        <p class="stat-title">{{ title }}</p>
+        <h3 class="stat-value">{{ value }}</h3>
+        <div class="stat-footer">
+            <mat-icon *ngIf="increase" class="trend-icon increase">trending_up</mat-icon>
+            <mat-icon *ngIf="!increase" class="trend-icon decrease">trending_down</mat-icon>
+            <span [class.increase]="increase" [class.decrease]="!increase">{{ percentage }}</span>
+            <span class="period">since last month</span>
+        </div>
+    </div>
+</mat-card>

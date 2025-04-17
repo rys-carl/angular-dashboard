@@ -1,0 +1,25 @@
+<div class="sidebar-header">
+    <div class="company-logo">
+      <mat-icon>business</mat-icon>
+    </div>
+    <h2 class="company-name">Power Team Inc.</h2>
+  </div>
+  
+  <mat-divider></mat-divider>
+  
+  <mat-nav-list>
+    <a mat-list-item [routerLink]="item.route" routerLinkActive="active-link" *ngFor="let item of menuItems">
+      <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+      <span matListItemTitle>{{ item.name }}</span>
+    </a>
+  </mat-nav-list>
+  
+  <div class="sidebar-footer">
+    <div class="user-info">
+      <img src="assets/user-avatar.jpg" alt="User Avatar" class="user-avatar">
+      <div class="user-details">
+        <p class="user-name">Jane Doe</p>
+        <p class="user-role">Administrator</p>
+      </div>
+    </div>
+  </div>

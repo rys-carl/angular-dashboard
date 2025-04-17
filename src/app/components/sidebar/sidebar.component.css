@@ -1,0 +1,58 @@
+.sidebar-header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    background-color: #3f51b5;
+  }
+  
+  .company-logo {
+    margin-right: 12px;
+  }
+  
+  .company-name {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .active-link {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: #3f51b5;
+  }
+  
+  .sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+  
+  .user-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-name {
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .user-role {
+    margin: 0;
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.6);
+  }

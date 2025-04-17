@@ -1,0 +1,47 @@
+<div class="dashboard-container">
+    <h1 class="page-title">Dashboard</h1>
+
+    <div class="stats-container">
+        <app-stat-card *ngFor="let stat of stats" [title]="stat.title" [value]="stat.value" [icon]="stat.icon"
+            [color]="stat.color" [increase]="stat.increase" [percentage]="stat.percentage">
+        </app-stat-card>
+    </div>
+
+    <div class="charts-container">
+        <div class="chart-card">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Daily Sales</mat-card-title>
+                    <mat-card-subtitle>Last 7 days performance</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <app-daily-sales-chart></app-daily-sales-chart>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="chart-card">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Email Subscriptions</mat-card-title>
+                    <mat-card-subtitle>Last 6 months performance</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <app-email-subscription-chart></app-email-subscription-chart>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="chart-card">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Completed Tasks</mat-card-title>
+                    <mat-card-subtitle>Last 7 days performance</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <app-completed-task-chart></app-completed-task-chart>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
