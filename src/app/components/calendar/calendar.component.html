@@ -1,1 +1,52 @@
-<p>calendar works!</p>
+<div class="calendar-container">
+    <h1 class="page-title">Calendar</h1>
+
+    <div class="calendar-content">
+        <mat-card class="calendar-card">
+            <mat-calendar [(selected)]="selected"></mat-calendar>
+        </mat-card>
+
+        <mat-card class="events-card">
+            <mat-card-header>
+                <mat-card-title>
+                    Events for {{ selected | date:'mediumDate' }}
+                </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div *ngIf="todaysEvents.length === 0" class="no-events">
+                    <mat-icon>event_busy</mat-icon>
+                    <p>No events scheduled for today</p>
+                </div>
+
+                <div *ngFor="let event of todaysEvents" class="event-item">
+                    <div class="event-icon" [style.background-color]="getEventTypeColor(event.type)">
+                        <mat-icon>{{ getEventTypeIcon(event.type) }}</mat-icon>
+                    </div>
+
+                    <div class="event-details">
+                        <h3 class="event-title">{{ event.title }}</h3>
+                        <p class="event-time">{{ formatTime(event.date) }}</p>
+                        <p class="event-description">{{ event.description }}</p>
+                    </div>
+
+                    <div class="event-actions">
+                        <button mat-icon-button color="primary" aria-label="Edit event">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" aria-label="Delete event">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-raised-button color="primary">
+                    <mat-icon>add</mat-icon>
+                    Add Event
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

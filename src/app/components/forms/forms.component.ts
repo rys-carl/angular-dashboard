@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrl: './forms.component.css'
 })
 export class FormsComponent {
-
+  departments = [
+    'Engineering',
+    'Marketing',
+    'Sales',
+    'Finance',
+    'Human Resources',
+    'Product',
+    'Design',
+    'Customer Support',
+  ];
 }

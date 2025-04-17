@@ -1,0 +1,30 @@
+.table-container {
+    padding: 16px;
+  }
+  
+  .page-title {
+    margin-bottom: 24px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  mat-card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08) !important;
+  }
+  
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  th.mat-header-cell {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  
+  .mat-column-actions {
+    width: 100px;
+  }

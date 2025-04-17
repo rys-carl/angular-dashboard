@@ -1,1 +1,104 @@
-<p>user-profile works!</p>
+<div class="profile-container">
+    <h1 class="page-title">User Profile</h1>
+
+    <div class="profile-content">
+        <mat-card class="profile-card">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="assets/user-avatar.jpg" alt="User Avatar">
+                </div>
+                <div class="profile-info">
+                    <h2>{{ user.name }}</h2>
+                    <p class="profile-role">{{ user.role }}</p>
+                </div>
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <div class="profile-details">
+                <div class="detail-item">
+                    <mat-icon>email</mat-icon>
+                    <div>
+                        <p class="detail-label">Email</p>
+                        <p class="detail-value">{{ user.email }}</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <mat-icon>business</mat-icon>
+                    <div>
+                        <p class="detail-label">Company</p>
+                        <p class="detail-value">{{ user.company }}</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <mat-icon>location_on</mat-icon>
+                    <div>
+                        <p class="detail-label">Location</p>
+                        <p class="detail-value">{{ user.location }}</p>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <mat-icon>calendar_today</mat-icon>
+                    <div>
+                        <p class="detail-label">Joined</p>
+                        <p class="detail-value">{{ user.joinDate | date:'mediumDate' }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <mat-divider></mat-divider>
+
+            <div class="profile-bio">
+                <h3>About</h3>
+                <p>{{ user.bio }}</p>
+            </div>
+        </mat-card>
+
+        <mat-card class="edit-profile-card">
+            <mat-card-header>
+                <mat-card-title>Edit Profile</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <form class="profile-form">
+                    <div class="form-row">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input matInput [value]="user.name">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput [value]="user.email">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-row">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Company</mat-label>
+                            <input matInput [value]="user.company">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Location</mat-label>
+                            <input matInput [value]="user.location">
+                        </mat-form-field>
+                    </div>
+
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Bio</mat-label>
+                        <textarea matInput rows="4" [value]="user.bio"></textarea>
+                    </mat-form-field>
+
+                    <div class="form-actions">
+                        <button mat-raised-button color="primary">Save Changes</button>
+                        <button mat-button>Cancel</button>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
