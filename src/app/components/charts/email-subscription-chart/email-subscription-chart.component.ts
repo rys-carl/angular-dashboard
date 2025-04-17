@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'app-email-subscription-chart',
   standalone: false,
   templateUrl: './email-subscription-chart.component.html',
-  styleUrl: './email-subscription-chart.component.css'
+  styleUrls: ['./email-subscription-chart.component.css']
 })
 export class EmailSubscriptionChartComponent implements OnInit {
+  isBrowser = false;
   public barChartData: ChartConfiguration<'bar'>['data'] = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June'],
     datasets: [
@@ -37,7 +39,9 @@ export class EmailSubscriptionChartComponent implements OnInit {
     },
   };
 
-  constructor() {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit(): void {}
 }

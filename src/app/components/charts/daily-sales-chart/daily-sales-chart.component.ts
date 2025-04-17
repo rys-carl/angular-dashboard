@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
 
 @Component({
@@ -8,6 +9,7 @@ import { ChartConfiguration, ChartOptions } from 'chart.js';
   styleUrl: './daily-sales-chart.component.css'
 })
 export class DailySalesChartComponent implements OnInit {
+  isBrowser = false;
   public lineChartData: ChartConfiguration<'line'>['data'] = {
     labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     datasets: [
@@ -41,7 +43,9 @@ export class DailySalesChartComponent implements OnInit {
     },
   };
 
-  constructor() {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   ngOnInit(): void {}
 }
